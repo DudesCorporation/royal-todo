@@ -1,3 +1,3 @@
 <template>
-  <header>Royal Todo</header>
+  <header>Hello Dudes Corp.</header>
 </template>
