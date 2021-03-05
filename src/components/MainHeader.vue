@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <h1>Hello world</h1>
-  </div>
+  <header>Royal Todo</header>
 </template>
