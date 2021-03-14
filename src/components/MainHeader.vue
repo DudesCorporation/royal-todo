@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="MainHeader">
     <router-link to="/" class="logo">Royal ToDo</router-link>
     <nav class="nav">
       <ul class="nav__list">
