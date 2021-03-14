@@ -3,11 +3,8 @@
 </template>
 
 <style lang="scss">
-$canvasClr: #303f4e;
-
 body {
   box-sizing: border-box;
-  background-color: $canvasClr;
   margin: 0;
   padding: 0;
 }

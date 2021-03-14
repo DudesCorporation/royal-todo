@@ -1,5 +1,5 @@
 <template>
-  <main class="my-todos">
+  <main class="MyTodos">
     <MainHeader />
     <Loader v-if="loading" />
     <div v-else>No Todos!</div>
@@ -34,7 +34,9 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.loading = false
+    setTimeout(() => {
+      this.loading = false;
+    }, 4000);
   },
 })
 </script>

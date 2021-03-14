@@ -1,21 +1,20 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('@/views/Home.vue'),
   },
   {
     path: '/mytodos',
     name: 'MyTodos',
-    component: () => import('../views/MyTodos.vue'),
+    component: () => import('@/views/MyTodos.vue'),
   },
   {
     path: '/completed',
     name: 'CompletedTodos',
-    component: () => import('../views/CompletedTodos.vue'),
+    component: () => import('@/views/CompletedTodos.vue'),
   },
 ]
 
