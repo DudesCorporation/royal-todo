@@ -11,7 +11,7 @@
       <ul>
         <li class="todo-block__item">I should make something usless</li>
         <li class="todo-block__item">I should make something usless</li>
-        <li class="todo-block__item">I should make something usless</li>
+        <li class="todo-block__item ">I should make something usless</li>
       </ul>
     </div>
   </main>
