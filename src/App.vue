@@ -1,40 +1,27 @@
 <template>
-  <router-view />
+  <div class="App">
+    <component :is="layout">
+      <router-view />
+    </component>
+  </div>
 </template>
 
-<style lang="scss">
-$bgClr: #010814;
-$fontClr: #cfd6db;
+<script lang="ts">
+import { defineComponent, defineAsyncComponent, computed, getCurrentInstance } from 'vue';
 
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: $bgClr;
-  color: $fontClr;
-}
+export default defineComponent({
+  name: 'App',
+  setup() {
+    const BasicLayout = defineAsyncComponent(() => import('@/views/layouts/BasicLayout.vue'));
+    const LoginLayout = defineAsyncComponent(() => import('@/views/layouts/LoginLayout.vue'));
 
-h1,
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
-}
+    const app = getCurrentInstance();
+    const $auth = app?.appContext.config.globalProperties.$auth;
+    const layout = computed(() => $auth.loggedIn ? BasicLayout : LoginLayout);
 
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-p {
-  margin: 0;
-  padding: 0;
-}
-</style>
+    return {
+      layout,
+    };
+  },
+});
+</script>
