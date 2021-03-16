@@ -1,6 +1,6 @@
 <template>
-  <header class="MainHeader flex text-white h-16 items-center text-2xl p-6">
-    <router-link to="/" class="logo">Royal ToDo</router-link>
+  <header class="MainHeader flex text-white h-16 items-center text-2xl p-6 shadow-lg">
+    <router-link to="/" class="logo hover:text-yellow-300">Royal ToDo</router-link>
   </header>
 </template>
 
