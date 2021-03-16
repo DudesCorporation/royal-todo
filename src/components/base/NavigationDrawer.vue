@@ -3,60 +3,41 @@
     <ul class="nav__list">
       <li class="nav__item">
         <router-link to="/" class="nav__link">
-          <span class="nav__icon">HOME</span>
+          <span class="nav__icon"><Icon>home-edit</Icon></span>
           <span class="nav__title">Home</span>
         </router-link>
       </li>
       <li class="nav__item">
         <router-link to="/mytodos" class="nav__link">
-          <span class="nav__icon">MYTODOS</span>
+          <span class="nav__icon"> <Icon>clipboard-list</Icon> </span>
           <span class="nav__title">My Todos</span>
         </router-link>
       </li>
       <li class="nav__item">
         <router-link to="/completed" class="nav__link">
-          <span class="nav__icon"></span>
+          <span class="nav__icon"><Icon>book-check </Icon> </span>
           <span class="nav__title">Completed Todos</span>
         </router-link>
       </li>
     </ul>
   </nav>
   <div class="nav-toggle"></div>
-  <!-- <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <router-link to="/" class="nav__link">
-          Home
-        </router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="/mytodos" class="nav__link">
-          My Todos
-        </router-link>
-      </li>
-      <li class="nav__item">
-        <router-link to="/completed" class="nav__link">
-          Completed Todo
-        </router-link>
-      </li>
-    </ul>
-  </nav> -->
 </template>
 
 <style lang="scss" scoped>
-$drawerClr: #0b0c10;
-$hoverClr: #101218;
+$clrMenu: #010c1f;
+$hoverClr: #011029;
 
 $baseFont: 'Ubuntu', sans-serif;
 
 .nav {
   position: relative;
-  width: 40vh;
+  width: 350px;
   height: 90vh;
-  background-color: $drawerClr;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   transition: 0.2s;
+  background-color: $clrMenu;
   &__list {
     position: absolute;
     top: 0;
@@ -76,7 +57,7 @@ $baseFont: 'Ubuntu', sans-serif;
     color: gold;
     font-family: $baseFont;
     transition: all 0.2s ease-in-out;
-    padding: 1rem;
+    padding: 0 1rem;
     margin-bottom: 0.3em;
     &:hover {
       background-color: $hoverClr;
@@ -86,7 +67,7 @@ $baseFont: 'Ubuntu', sans-serif;
   &__icon {
     position: relative;
     display: block;
-    min-width: 80px;
+    min-width: 32px;
     height: 60px;
     line-height: 60px;
     text-align: center;
@@ -103,21 +84,22 @@ $baseFont: 'Ubuntu', sans-serif;
   position: absolute;
   width: 60px;
   height: 60px;
-  background-color: $drawerClr;
   cursor: pointer;
-  left: 200px;
+  left: 245px;
   top: calc(50% - 20px);
-  border: 10px solid #08090c;
+  border: 10px solid #010814;
   border-radius: 50%;
+  background-color: $clrMenu;
+  z-index: 100;
   &::before {
-    content: '<';
+    content: '\00AB';
     position: absolute;
     text-align: center;
     top: 5px;
     width: 100%;
     height: 100%;
     line-height: 30px;
-    color: whitesmoke;
+    color: gold;
     cursor: pointer;
   }
 }

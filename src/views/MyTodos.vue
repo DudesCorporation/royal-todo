@@ -1,16 +1,12 @@
 <template>
-  <main class="MyTodos ">
-    <MainHeader class="main-header" />
+  <main class="MyTodos">
+    <MainHeader />
     <section class="wrapper">
       <NavigationDrawer />
 
       <div class="content">
         <Loader v-if="loading" />
         <div v-else>No Todos!</div>
-        <h2>
-          My Todos
-          <router-link to="/completed">Go to view completed Todo</router-link>
-        </h2>
         <div class="todo-block">
           <ul>
             <li class="todo-block__item">I should make something usless</li>
@@ -50,19 +46,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-$bgClr: #08090c;
-$fontClr: #cfd6db;
-
 .wrapper {
   display: flex;
 }
 .content {
   position: relative;
   width: 100%;
-}
-.MyTodos {
-  height: 100vh;
-  background-color: $bgClr;
-  color: $fontClr;
 }
 </style>
