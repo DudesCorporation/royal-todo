@@ -15,7 +15,7 @@
       </li>
       <li class="nav__item p-3 hover:text-yellow-300 transition duration-500 ease-in-out hover:text-yellow-300">
         <router-link to="/completed" class="nav__link">
-          <span class="nav__icon text-3xl"><Icon>book-check</Icon> </span>
+          <span class="nav__icon text-3xl"><Icon>book-check</Icon></span>
           <span class="nav__title ml-6">Completed Todos</span>
         </router-link>
       </li>
