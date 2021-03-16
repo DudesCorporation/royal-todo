@@ -1,22 +1,9 @@
 <template>
   <div class="loader">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span v-for="i in 15" :key="i"></span>
   </div>
 </template>
+
 <style lang="scss">
 $waveClr: #9eb6ca;
 .loader {
