@@ -3,12 +3,15 @@
 </template>
 
 <style lang="scss">
-$bgClr: #08090c;
+$bgClr: #010814;
+$fontClr: #cfd6db;
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: $bgClr;
+  color: $fontClr;
 }
 
 h1,

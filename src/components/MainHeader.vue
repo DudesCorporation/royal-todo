@@ -1,8 +1,5 @@
 <template>
-  <header
-    class="MainHeader flex bg-gray-800 text-white h-16 items-center text-2xl p-4"
-  >
-    <Icon>menu</Icon>
+  <header class="MainHeader flex text-white h-16 items-center text-2xl p-6">
     <router-link to="/" class="logo">Royal ToDo</router-link>
   </header>
 </template>
@@ -14,3 +11,9 @@ export default defineComponent({
   name: 'MainHeader',
 })
 </script>
+
+<style lang="scss">
+.MainHeader {
+  background-color: #02112b;
+}
+</style>
