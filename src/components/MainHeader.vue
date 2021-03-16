@@ -1,16 +1,16 @@
 <template>
-  <header class="MainHeader flex bg-gray-800 text-white h-16 items-center text-2xl p-4">
+  <header
+    class="MainHeader flex bg-gray-800 text-white h-16 items-center text-2xl p-4"
+  >
     <Icon>menu</Icon>
-    <router-link to="/" class="logo">
-      Royal ToDo
-    </router-link>
+    <router-link to="/" class="logo">Royal ToDo</router-link>
   </header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainHeader',
-});
+})
 </script>
