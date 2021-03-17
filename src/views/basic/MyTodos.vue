@@ -22,8 +22,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Loader from '@/components/Loader.vue'
-import MainHeader from '@/components/MainHeader.vue'
-import NavigationDrawer from '@/components/base/NavigationDrawer.vue'
+import MainHeader from '@/components/basic/BasicHeader.vue'
+import NavigationDrawer from '@/components/basic/NavigationDrawer.vue'
 
 export default defineComponent({
   name: 'MyTodos',
