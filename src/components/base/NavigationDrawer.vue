@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav relative w-64 bg-gray-900 h-screen shadow-lg">
+  <nav class="NavigationDrawer relative w-64 bg-gray-900 h-screen shadow-lg">
     <ul class="nav__list absolute inset-0 w-max text-white text-xl">
       <li class="nav__item relative w-max p-3 transition duration-500 ease-in-out hover:text-yellow-300">
         <router-link to="/" class="nav__link relative">
@@ -20,7 +20,18 @@
         </router-link>
       </li>
     </ul>
-    <div class=" bg-gray-900 nav-toggle absolute cursor-pointer border-8 border-black rounded-full z-50 -right-6 top-1/2 text-center text-3xl"><Icon>chevron-left</Icon></div>
 
+    <div
+      class="bg-gray-900 nav-toggle absolute cursor-pointer
+        border-8 border-black rounded-full z-50 -right-6 top-1/2 text-center text-3xl"
+    >
+      <Icon>chevron-left</Icon>
+    </div>
   </nav>
 </template>
+
+<style lang="scss" scoped>
+  .NavigationDrawer {
+    height: calc(100vh - #{$toolbar-height});
+  }
+</style>
