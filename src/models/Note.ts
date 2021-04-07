@@ -11,6 +11,7 @@ export class Note extends Model {
   type!: NoteType;
 
   constructor(props: Note) {
+    // TODO add base note logic
     super(props);
   }
 }

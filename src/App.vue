@@ -19,9 +19,7 @@ export default defineComponent({
     const $auth = app?.appContext.config.globalProperties.$auth;
     const layout = computed(() => $auth.loggedIn ? BasicLayout : LoginLayout);
 
-    return {
-      layout,
-    };
+    return { layout };
   },
 });
 </script>

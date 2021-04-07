@@ -1,6 +1,9 @@
 <template>
   <div class="loader">
-    <span v-for="i in 15" :key="i"></span>
+    <span
+      v-for="i in 15"
+      :key="i"
+    ></span>
   </div>
 </template>
 

@@ -9,7 +9,7 @@ export default defineComponent({
   name: 'Icon',
   computed: {
     icon() {
-      return this.$slots.default?.().map((v) => v.children).join();
+      return this.$slots.default?.().map(v => v.children).join();
     },
   },
 });
