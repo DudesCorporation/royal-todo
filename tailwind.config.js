@@ -2,12 +2,9 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    height: {
-  },
+    height: {},
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
+  variants: { extend: {} },
   plugins: [],
-}
+};

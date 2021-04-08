@@ -6,12 +6,20 @@
 
       <div class="content">
         <Loader v-if="loading" />
-        <div v-else>No Todos!</div>
+        <div v-else>
+          No Todos!
+        </div>
         <div class="todo-block">
           <ul>
-            <li class="todo-block__item">I should make something usless</li>
-            <li class="todo-block__item">I should make something usless</li>
-            <li class="todo-block__item ">I should make something usless</li>
+            <li class="todo-block__item">
+              I should make something usless
+            </li>
+            <li class="todo-block__item">
+              I should make something usless
+            </li>
+            <li class="todo-block__item ">
+              I should make something usless
+            </li>
           </ul>
         </div>
       </div>
@@ -20,10 +28,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Loader from '@/components/Loader.vue'
-import MainHeader from '@/components/basic/BasicHeader.vue'
-import NavigationDrawer from '@/components/basic/NavigationDrawer.vue'
+import { defineComponent } from 'vue';
+import Loader from '@/components/Loader.vue';
+import MainHeader from '@/components/basic/BasicHeader.vue';
+import NavigationDrawer from '@/components/basic/NavigationDrawer.vue';
 
 export default defineComponent({
   name: 'MyTodos',
@@ -33,16 +41,14 @@ export default defineComponent({
     NavigationDrawer,
   },
   data() {
-    return {
-      loading: true,
-    }
+    return { loading: true };
   },
   mounted() {
     setTimeout(() => {
-      this.loading = true
-    }, 4000)
+      this.loading = true;
+    }, 4000);
   },
-})
+});
 </script>
 
 <style lang="scss">

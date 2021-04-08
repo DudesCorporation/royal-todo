@@ -6,8 +6,6 @@ const user = {
   name: 'John Doe',
 };
 
-const auth = createAuth({
-  user,
-});
+const auth = createAuth({ user });
 
 export default auth as Auth;

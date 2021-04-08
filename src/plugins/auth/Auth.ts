@@ -14,7 +14,7 @@ export class Auth {
   }
 
   install(app: App) {
-    app.config.globalProperties.$auth = this
+    app.config.globalProperties.$auth = this;
   }
 }
 
