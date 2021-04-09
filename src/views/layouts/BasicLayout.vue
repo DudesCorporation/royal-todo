@@ -3,7 +3,9 @@
     <BasicHeader />
     <div class="flex">
       <NavigationDrawer />
-      <slot />
+      <div>
+        <slot />
+      </div>
     </div>
   </div>
 </template>
