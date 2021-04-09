@@ -14,6 +14,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
+    'prefer-template': 'off',
     'comma-dangle': ['error', {
       arrays: 'always-multiline',
       objects: 'always-multiline',
@@ -30,7 +31,7 @@ module.exports = {
 
     curly: 'off',
     'no-useless-constructor': 'warn',
-    'class-methods-use-this': 'warn',
+    'class-methods-use-this': 'off',
     'import/prefer-default-export': 'off',
     'import/no-unresolved': [
       0,
@@ -39,6 +40,7 @@ module.exports = {
         amd: true,
       },
     ],
+    '@typescript-eslint/ban-ts-ignore': 'off',
     'no-unused-vars': [
       'error',
       {
