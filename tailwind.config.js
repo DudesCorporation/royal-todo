@@ -3,11 +3,16 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     height: {},
-    extend: {},
+    extend: {
+      flexGrow: {
+        2: 2,
+      },
+    },
   },
   variants: {
     extend: {
       backgroundColor: ['active'],
+      flexGrow: ['hover'],
     },
   },
   plugins: [],
