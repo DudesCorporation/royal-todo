@@ -6,7 +6,7 @@
       <button
         class="text-white bg-gray-600 px-3 py-1 mr-2 focus:outline-none rounded active:bg-gray-500"
       >
-        <Icon>backspace</Icon>
+        <Icon>cancel</Icon>
       </button>
       <button
         class="text-white bg-gray-600 px-3 py-1 mr-2 focus:outline-none rounded active:bg-gray-500"
