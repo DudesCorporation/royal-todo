@@ -6,7 +6,7 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
-import 'tailwindcss/dist/tailwind.min.css';
+import '@/assets/styles/tailwind.scss';
 import '@mdi/font/css/materialdesignicons.min.css';
 
 const app = createApp(App);

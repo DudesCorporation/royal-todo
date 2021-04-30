@@ -83,6 +83,15 @@ module.exports = {
       svg: 'always',
       math: 'always',
     }],
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': {
+        'max': 3,
+      },
+      'multiline': {
+        'max': 1,
+      }
+    }],
     'vue/require-default-prop': 'error',
     'vue/require-prop-types': 'error',
     'vue/attributes-order': 'error',
