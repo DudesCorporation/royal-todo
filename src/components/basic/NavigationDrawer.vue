@@ -1,13 +1,14 @@
 <template>
-  <nav class="NavigationDrawer flex flex-col border-r-2 border-gray-800 pt-0.5">
+  <nav class="NavigationDrawer flex flex-col pt-0.5">
     <router-link
       v-for="(item, index) in items"
       :key="index"
       v-slot="{ isExactActive }"
+      class="mx-1 mt-1"
       :to="item.link"
     >
       <div
-        class="p-3 ml-1 mr-1 mt-1 rounded cursor-pointer hover:bg-gray-200
+        class="p-3 rounded cursor-pointer hover:bg-gray-200
           active:bg-gray-400 hover:text-black"
         :class="{ 'bg-gray-300': isExactActive }"
       >

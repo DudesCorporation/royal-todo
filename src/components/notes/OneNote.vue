@@ -1,6 +1,9 @@
 <template>
-  <div class="OneNote">
-    <pre>{{ note }}</pre>
+  <div
+    class="OneNote mb-4 px-4 py-2 cursor-pointer border-2 rounded-md hover:bg-gray-100
+     hover:border-blue-300"
+  >
+    <div>{{ note }}</div>
   </div>
 </template>
 

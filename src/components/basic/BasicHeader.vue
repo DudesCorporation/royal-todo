@@ -8,8 +8,8 @@
     </router-link>
 
     <button
-      class="px-4 py-2 text-white bg-green-500 border-2 border-green-600
-        rounded-md focus:outline-none active:bg-green-400"
+      class="px-4 py-2 text-white bg-blue-500 border-2 border-blue-600
+        rounded-md focus:outline-none active:bg-blue-600"
     >
       Create new
     </button>
@@ -28,5 +28,6 @@ export default defineComponent({
 .BasicHeader {
   background-color: #02112b;
   height: $toolbar-height;
+  width: calc(100% - 20rem);
 }
 </style>
