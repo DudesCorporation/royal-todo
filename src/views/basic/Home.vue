@@ -1,5 +1,5 @@
 <template>
-  <div class="Home flex flex-col">
+  <div class="Home px-4 pt-5 pb-2">
     <Suspense>
       <NotesList />
       <template #fallback>

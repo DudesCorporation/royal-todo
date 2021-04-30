@@ -1,52 +1,37 @@
 <template>
-  <nav class="NavigationDrawer relative w-64 bg-gray-900 h-screen shadow-lg">
-    <ul class="nav__list absolute inset-0 w-max text-white text-xl">
-      <li
-        class="nav__item relative w-max p-3 transition duration-500
-         ease-in-out hover:text-yellow-300"
-      >
-        <router-link
-          to="/"
-          class="nav__link relative"
-        >
-          <span class="nav__icon relative text-3xl"><Icon>home-edit</Icon></span>
-          <span class="nav__title relative ml-6">Home</span>
-        </router-link>
-      </li>
-      <li
-        class="nav__item p-3 hover:text-yellow-300
-         transition duration-500 ease-in-out hover:text-yellow-300"
-      >
-        <router-link
-          to="/mytodos"
-          class="nav__link"
-        >
-          <span class="nav__icon text-3xl"><Icon>clipboard-list</Icon></span>
-          <span class="nav__title ml-6">My Todos</span>
-        </router-link>
-      </li>
-      <li
-        class="nav__item p-3 hover:text-yellow-300 transition
-         duration-500 ease-in-out hover:text-yellow-300"
-      >
-        <router-link
-          to="/completed"
-          class="nav__link"
-        >
-          <span class="nav__icon text-3xl"><Icon>book-check</Icon></span>
-          <span class="nav__title ml-6">Completed Todos</span>
-        </router-link>
-      </li>
-    </ul>
-
-    <div
-      class="bg-gray-900 nav-toggle absolute cursor-pointer
-        border-8 border-black rounded-full z-50 -right-6 top-1/2 text-center text-3xl"
+  <nav class="NavigationDrawer flex flex-col pt-0.5">
+    <router-link
+      v-for="(item, index) in items"
+      :key="index"
+      v-slot="{ isExactActive }"
+      class="mx-1 mt-1"
+      :to="item.link"
     >
-      <Icon>chevron-left</Icon>
-    </div>
+      <div
+        class="p-3 rounded cursor-pointer hover:bg-gray-200
+          active:bg-gray-400 hover:text-black"
+        :class="{ 'bg-gray-300': isExactActive }"
+      >
+        <Icon class="text-2xl">{{ item.icon }}</Icon>
+        <span class="text-xl pl-2">{{ item.title }}</span>
+      </div>
+    </router-link>
   </nav>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { mapGetters } from 'vuex';
+
+export default defineComponent({
+  name: 'NavigationDrawer',
+  computed: {
+    ...mapGetters({
+      items: 'navigationDrawerItems',
+    }),
+  },
+});
+</script>
 
 <style lang="scss" scoped>
   .NavigationDrawer {

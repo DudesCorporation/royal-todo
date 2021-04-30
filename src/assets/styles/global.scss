@@ -1,34 +1,8 @@
-$bgClr: #010814;
-$fontClr: #cfd6db;
-
 body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: $bgClr;
-  color: $fontClr;
+  overflow: hidden;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
-}
-
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-p {
-  margin: 0;
-  padding: 0;
+a:focus {
+  border-color: dodgerblue;
+  outline: none;
 }
