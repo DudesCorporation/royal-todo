@@ -114,5 +114,6 @@ module.exports = {
     'arrow-parens': ['warn', 'as-needed'],
     'no-confusing-arrow': 'off',
     'no-param-reassign': 'off',
+    'no-return-assign': 'off',
   },
 };
