@@ -8,7 +8,12 @@ export default {
           title: 'Home',
         },
         {
-          link: '/mytodos',
+          link: '/notes',
+          icon: 'note-multiple',
+          title: 'Notes',
+        },
+        {
+          link: '/todos',
           icon: 'clipboard-list',
           title: 'My Todos',
         },

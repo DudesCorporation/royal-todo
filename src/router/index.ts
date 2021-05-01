@@ -1,27 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { importAll } from '@/utils/files';
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/basic/Home.vue'),
-  },
-  {
-    path: '/mytodos',
-    name: 'MyTodos',
-    component: () => import('@/views/basic/MyTodos.vue'),
-  },
-  {
-    path: '/completed',
-    name: 'CompletedTodos',
-    component: () => import('@/views/basic/CompletedTodos.vue'),
-  },
-  {
-    path: '/login',
-    name: 'LoginPage',
-    component: () => import('@/views/login/LoginPage.vue'),
-  },
-];
+const routes: Array<RouteRecordRaw> = importAll(require.context('./../pages', true, /\.ts$/));
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

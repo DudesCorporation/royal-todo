@@ -1,13 +1,11 @@
 <template>
-  <div class="Home">
-    <div>Home page</div>
-  </div>
+  <div>Edit note page</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Home',
+  name: 'EditNotePage',
 });
 </script>
