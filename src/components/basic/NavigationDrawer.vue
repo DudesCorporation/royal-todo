@@ -1,21 +1,30 @@
 <template>
-  <nav class="NavigationDrawer flex flex-col pt-0.5 border-r border-gray-400">
+  <nav class="NavigationDrawer flex flex-col pt-1 border-r border-gray-400">
     <router-link
       v-for="(item, index) in items"
       :key="index"
       v-slot="{ isExactActive }"
-      class="mx-1 mt-1"
+      class="mx-2 mt-1"
       :to="item.link"
     >
       <div
-        class="p-3 rounded cursor-pointer hover:bg-gray-200
-          active:bg-gray-400 hover:text-black"
+        class="nav-btn"
         :class="{ 'bg-gray-300': isExactActive }"
       >
-        <Icon class="text-2xl">{{ item.icon }}</Icon>
-        <span class="text-xl pl-2">{{ item.title }}</span>
+        <Icon class="text-xl">{{ item.icon }}</Icon>
+        <span class="text-lg pl-4">{{ item.title }}</span>
       </div>
     </router-link>
+
+    <div class="flex-1"></div>
+
+    <div class="p-2">
+      <div class="nav-btn flex items-center">
+        <div class="rounded-full w-10 h-10 bg-gray-500"></div>
+        <div class="font-bold ml-4">John Doe</div>
+        <Icon class="ml-auto text-2xl">chevron-right</Icon>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -36,5 +45,9 @@ export default defineComponent({
 <style lang="scss" scoped>
   .NavigationDrawer {
     height: calc(100vh - #{$toolbar-height});
+  }
+
+  .nav-btn {
+    @apply p-3 rounded cursor-pointer hover:bg-gray-200 active:bg-gray-300;
   }
 </style>

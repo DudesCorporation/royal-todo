@@ -4,7 +4,7 @@ export default {
       items: [
         {
           link: '/',
-          icon: 'home-edit',
+          icon: 'home',
           title: 'Home',
         },
         {
@@ -15,12 +15,12 @@ export default {
         {
           link: '/todos',
           icon: 'clipboard-list',
-          title: 'My Todos',
+          title: 'Todo list',
         },
         {
           link: '/completed',
-          icon: 'book-check',
-          title: 'Completed Todos',
+          icon: 'clipboard-check',
+          title: 'Completed',
         },
       ],
     };
