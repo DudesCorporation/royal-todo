@@ -1,7 +1,7 @@
 <template>
-  <header class="BasicHeader flex justify-between items-center pl-6 pr-6 shadow-xl">
+  <header class="BasicHeader flex justify-between items-center pl-6 pr-6 border-b border-black">
     <router-link
-      class="text-white text-2xl hover:text-yellow-300"
+      class="text-2xl"
       to="/"
     >
       Royal ToDo
@@ -26,7 +26,6 @@ export default defineComponent({
 
 <style lang="scss">
 .BasicHeader {
-  background-color: #02112b;
   height: $toolbar-height;
   width: calc(100% - 20rem);
 }
