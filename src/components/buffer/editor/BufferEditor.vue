@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col flex-grow-2 transition-all duration-500">
+  <div class="flex flex-col flex-grow-2">
     <BufferEditorHeader />
     <BufferEditorContent />
   </div>

@@ -11,6 +11,13 @@ module.exports = {
         3: '3rem',
         4: '4rem',
       },
+      maxHeight: {
+        'screen-30': '30vh',
+        'screen-40': '40vh',
+        'screen-50': '50vh',
+        'screen-60': '60vh',
+        'screen-70': '70vh',
+      },
     },
   },
   variants: {
@@ -18,6 +25,7 @@ module.exports = {
       backgroundColor: ['active'],
       flexGrow: ['hover'],
       outline: ['hover'],
+      maxHeight: ['hover'],
     },
   },
   plugins: [],

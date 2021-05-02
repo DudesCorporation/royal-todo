@@ -1,9 +1,5 @@
 <template>
-  <aside
-    tabindex="0"
-    class="flex flex-col border-2 border-separate border-transparent bg-gray-400
-     focus:border-blue-400"
-  >
+  <aside class="flex flex-col border-l border-black">
     <BufferEditor />
     <BufferHistory />
   </aside>
