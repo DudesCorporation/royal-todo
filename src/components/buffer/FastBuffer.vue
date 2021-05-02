@@ -1,12 +1,12 @@
 <template>
-  <section
+  <aside
     tabindex="0"
     class="flex flex-col border-2 border-separate border-transparent bg-gray-400
      focus:border-blue-400"
   >
     <BufferEditor />
     <BufferHistory />
-  </section>
+  </aside>
 </template>
 
 <script lang="ts">

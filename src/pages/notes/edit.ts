@@ -1,5 +1,8 @@
 export default {
   path: '/notes/:id',
-  name: 'EditNotePage',
-  component: () => import('@/views/notes/EditNotePage.vue'),
+  name: 'EditNote',
+  component: () => import('@/views/notes/EditNote.vue'),
+  meta: {
+    pageOverflow: 'hidden',
+  },
 };

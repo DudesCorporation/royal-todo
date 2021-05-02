@@ -1,4 +1,7 @@
 import { createApp } from 'vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+
 import Icon from '@/components/Icon.vue';
 import auth from '@/plugins/auth';
 import App from './App.vue';
@@ -17,6 +20,7 @@ app
 app
   .use(store)
   .use(router)
-  .use(auth);
+  .use(auth)
+  .use(VueAxios, axios);
 
 app.mount('#app');

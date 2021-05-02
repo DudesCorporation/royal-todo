@@ -1,11 +1,15 @@
 module.exports = {
   purge: ['./src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // 'media' or 'class'
   theme: {
-    height: {},
     extend: {
       flexGrow: {
         2: 2,
+      },
+      minHeight: {
+        2: '2rem',
+        3: '3rem',
+        4: '4rem',
       },
     },
   },

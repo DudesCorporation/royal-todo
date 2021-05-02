@@ -1,12 +1,12 @@
 <template>
-  <div
-    :tabindex="note.id"
-    class="OneNote mb-4 px-4 py-2 cursor-pointer border-2 rounded-md hover:bg-gray-100
-     hover:border-blue-300"
+  <router-link
+    class="OneNote border-2 rounded-md hover:bg-gray-100 hover:border-gray-400 focus:outline-none
+     focus:bg-gray-100 focus:border-gray-400 mb-4 px-4 py-2 flex"
+    :to="`/notes/${note.id}`"
   >
     <b>{{ note.id }}</b>
     <div>{{ note }}</div>
-  </div>
+  </router-link>
 </template>
 
 <script>

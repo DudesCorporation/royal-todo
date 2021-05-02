@@ -1,5 +1,5 @@
 <template>
-  <nav class="NavigationDrawer flex flex-col pt-0.5">
+  <nav class="NavigationDrawer flex flex-col pt-0.5 border-r border-gray-400">
     <router-link
       v-for="(item, index) in items"
       :key="index"
