@@ -1,5 +1,5 @@
 <template>
-  <i :class="`mdi mdi-${getIcon()}`" />
+  <i :class="`mdi${getIcon()}`" />
 </template>
 
 <script lang="ts">
@@ -9,7 +9,8 @@ export default defineComponent({
   name: 'Icon',
   methods: {
     getIcon() {
-      return this.$slots.default?.().map(v => v.children).join();
+      const icon = this.$slots.default?.().map(v => v.children).join();
+      return icon ? ` mdi-${icon}` : '';
     },
   },
 });
