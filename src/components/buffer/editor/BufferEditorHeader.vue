@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center border-b border-gray-300">
     <div class="pl-1 text-2xl text-black">Fast buffer</div>
 
     <div class="py-1 pr-3">

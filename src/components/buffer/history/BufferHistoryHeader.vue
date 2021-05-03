@@ -1,6 +1,6 @@
 <template>
   <div class="pl-3 pr-5 pt-2">
-    <div class="flex justify-between border-b-2 border-gray-500 pb-1">
+    <div class="flex justify-between items-center border-b border-gray-500 pb-2">
       <div class="pl-0.5">Buffer history</div>
 
       <div class="px-2 flex">

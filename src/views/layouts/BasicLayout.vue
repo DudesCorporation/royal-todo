@@ -3,7 +3,7 @@
     <BasicHeader class="fixed z-50" />
     <NavigationDrawer class="fixed z-50 w-64 top-16" />
     <main class="min-h-screen max-h-screen pt-16 pl-64 pr-80 max-w-full flex flex-1">
-      <div class="relative max-w-full flex-1 shadow-2xl overflow-auto">
+      <div class="relative flex-1" :class="`overflow-${pageOverflow || 'auto'}`">
         <slot />
       </div>
     </main>
@@ -12,7 +12,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import BasicHeader from '@/components/basic/BasicHeader.vue';
 import NavigationDrawer from '@/components/basic/NavigationDrawer.vue';
 import FastBuffer from '@/components/buffer/FastBuffer.vue';
@@ -23,6 +24,14 @@ export default defineComponent({
     BasicHeader,
     NavigationDrawer,
     FastBuffer,
+  },
+  setup() {
+    const route = useRoute();
+    const pageOverflow = computed(() => route.meta.pageOverflow);
+
+    return {
+      pageOverflow,
+    };
   },
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="completed-todos">
     <h2>
-      Completed issues <router-link to="/mytodos">
+      Completed issues <router-link to="/todos">
         back to My Todos
       </router-link>
     </h2>
