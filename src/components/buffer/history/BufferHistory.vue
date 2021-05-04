@@ -1,11 +1,11 @@
 <template>
   <div
-    class="BufferHistory flex flex-col flex-grow bg-gray-100 rounded-t-lg border border-gray-300"
+    class="BufferHistory flex flex-col flex-grow bg-gray-100 border border-gray-300"
     :class="{
       'minimized': minimized && !maximized,
       'hover:flex-grow-2 hover:max-h-screen-60': !pinned && !maximized,
       'absolute max-h-screen h-screen': maximized,
-      'max-h-screen-40 transition-all': !maximized,
+      'rounded-t-lg max-h-screen-40 transition-all': !maximized,
     }"
   >
     <BufferHistoryHeader :actions="toolbarActions" />

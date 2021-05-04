@@ -1,8 +1,13 @@
 <template>
   <div class="BufferHistoryItem bg-gray-50 shadow py-1 px-2 rounded-sm">
     <div class="text-xs text-gray-600">Created {{ createdDateTime }}</div>
-    <div>{{ item.title }}</div>
-    <div class="font-bold">hello</div>
+
+    <div class="mt-1">{{ item.title }}</div>
+
+    <div class="pt-1 flex gap-x-1">
+      <button class="item-action">Restore</button>
+      <button class="delete-item-action">Delete</button>
+    </div>
   </div>
 </template>
 
@@ -32,3 +37,13 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+  .item-action {
+    @apply text-xs text-gray-500 hover:text-gray-900 cursor-pointer focus:outline-none
+      transition-none;
+  }
+  .delete-item-action {
+    @apply item-action hover:text-red-700 !important;
+  }
+</style>
