@@ -4,6 +4,7 @@ import VueAxios from 'vue-axios';
 
 import Icon from '@/components/Icon.vue';
 import auth from '@/plugins/auth';
+import middleware from '@/middleware';
 import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
@@ -21,6 +22,7 @@ app
   .use(store)
   .use(router)
   .use(auth)
+  .use(middleware)
   .use(VueAxios, axios);
 
 app.mount('#app');
