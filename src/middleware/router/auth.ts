@@ -1,25 +1,21 @@
-import { defineComponent, getCurrentInstance } from 'vue';
 import { useAuth } from '@/plugins/auth/Auth';
+import type { UseMiddlewareThis } from '@/middleware/Middleware';
 
-export function authMiddleware(toR, fromR, next) {
-  const $auth = useAuth(); // { appContext: app }
-  console.log('$auth', $auth);
-  const canNavigate = $auth?.loggedIn !== false;
+export function authMiddleware(this: UseMiddlewareThis, to, from, next) {
+  const $auth = useAuth({ appContext: this.app });
+  const loginRoutes: string[] = ['/login'];
 
-  if (!canNavigate) {
-    next('/login');
-    return;
+  const loggedIn = $auth?.loggedIn !== false;
+  const passToLoginRoutes = loginRoutes.includes(to.path);
+  const cameFromLoginRoutes = loginRoutes.includes(from.path);
+
+  if (!cameFromLoginRoutes && passToLoginRoutes && loggedIn) {
+    return next('/');
   }
 
-  next();
-}
+  if (cameFromLoginRoutes && !passToLoginRoutes && !loggedIn) {
+    return next('/login');
+  }
 
-export const blockUnauthorized = defineComponent({
-  beforeRouteEnter(toR, fromR, next) {
-    console.log('hello', 123123);
-    const instance = getCurrentInstance();
-    const $auth = instance?.appContext.config.globalProperties.$auth;
-    console.log($auth.loggedIn);
-    next();
-  },
-});
+  return next();
+}

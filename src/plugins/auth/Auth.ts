@@ -1,6 +1,6 @@
 import { App, reactive, getCurrentInstance, ComponentInternalInstance } from 'vue';
 
-export type UseAuthProp = ComponentInternalInstance | null | { appContext: App };
+export type UseAuthProp = ComponentInternalInstance | null | { appContext: App | undefined };
 
 export interface AuthOptions {
   user?: object;
@@ -39,5 +39,5 @@ export function createAuth(options: AuthOptions) {
  * getCurrentInstance only works during setup or Lifecycle Hooks
  */
 export function useAuth(instance: UseAuthProp = getCurrentInstance()): Auth {
-  return instance?.appContext.config.globalProperties.$auth;
+  return instance?.appContext?.config.globalProperties.$auth;
 }
