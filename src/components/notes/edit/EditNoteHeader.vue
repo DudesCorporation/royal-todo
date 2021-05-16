@@ -3,14 +3,11 @@
     class="EditNoteHeader min-h-3 lg:min-h-4 flex items-center px-3 bg-white
      border-b border-gray-400"
   >
-    <router-link
-      tag="button"
-      class="w-12 h-12 flex justify-center items-center rounded-full hover:bg-gray-200 text-2xl
-       transition-all duration-200 active:bg-gray-300"
+    <IconBtn
+      class="w-12 h-12 text-2xl"
+      icon="arrow-left"
       to="/notes"
-    >
-      <Icon>arrow-left</Icon>
-    </router-link>
+    />
 
     <div class="pl-3">
       <span class="font-bold">Note title</span>
@@ -20,9 +17,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import IconBtn from '@/components/root/IconBtn.vue';
 
 export default defineComponent({
   name: 'EditNoteHeader',
+  components: {
+    IconBtn,
+  },
 });
 </script>
 
