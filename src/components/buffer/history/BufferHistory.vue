@@ -3,16 +3,18 @@
     class="BufferHistory flex flex-col flex-grow bg-gray-100 border border-gray-300"
     :class="{
       'minimized': minimized && !maximized,
-      'hover:flex-grow-2 hover:max-h-screen-60': !pinned && !maximized,
+      'flex-grow-2 max-h-screen-60': itemsScrolled && !pinned && !maximized,
       'absolute max-h-screen h-screen': maximized,
       'rounded-t-lg max-h-screen-40 transition-all': !maximized,
     }"
+    @mouseleave="itemsScrolled = false"
   >
     <BufferHistoryHeader :actions="toolbarActions" />
 
     <div
       v-if="!minimized || maximized"
       class="flex-1 overflow-y-scroll py-4 px-2 flex flex-col gap-y-2"
+      @scroll="onItemsScroll"
     >
       <BufferHistoryItem
         v-for="(historyItem, index) in fastBufferItems"
@@ -45,6 +47,9 @@ export default defineComponent({
     const maximized = ref(false);
     const toggleMaximize = () => maximized.value = !maximized.value;
 
+    const itemsScrolled = ref(false);
+    const onItemsScroll = () => itemsScrolled.value = true;
+
     const toolbarActions = computed(() => [
       {
         title: pinned.value ? 'Unpin' : 'Pin',
@@ -68,6 +73,8 @@ export default defineComponent({
       minimized,
       pinned,
       maximized,
+      itemsScrolled,
+      onItemsScroll,
     };
   },
   computed: {
