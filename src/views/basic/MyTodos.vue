@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Loader from '@/components/Loader.vue';
+import Loader from '@/components/root/Loader.vue';
 
 export default defineComponent({
   name: 'MyTodos',

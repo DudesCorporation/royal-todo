@@ -28,7 +28,6 @@ export default defineComponent({
   },
   setup(props) {
     const checked = ref(props.todo.completed);
-    // @ts-ignore
     const toggleChecked = value => checked.value = value ?? !checked.value;
 
     return {
