@@ -11,34 +11,39 @@
       />
     </TodoColumn>
 
-    <DraggableList
-      class="flex flex-1"
-      :items="columns"
+    <ColumnOptionsMenu
+      v-for="(column, index) in columns"
+      :key="index"
     >
-      <template #item="props">
+      <template #activator="{ on, active }">
         <TodoColumn
-          v-bind="props"
-          class="flex items-center font-medium px-3 py-2"
+          class="flex items-center font-medium px-3 py-2 hover:bg-gray-50 cursor-pointer"
+          v-on="on"
         >
-          <div>{{ props.item }}</div>
+          <span>{{ column }}</span>
+          <div class="ml-auto">
+            <Icon class="text-xl">{{ active ? 'chevron-up' : 'chevron-down' }}</Icon>
+          </div>
         </TodoColumn>
       </template>
-    </DraggableList>
+    </ColumnOptionsMenu>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TodoColumn from '@/components/notes/edit/todo/TodoColumn.vue';
-import DraggableList from '@/components/drag-and-drop/DraggableList.vue';
 import IconBtn from '@/components/root/IconBtn.vue';
+import Icon from '@/components/root/Icon.vue';
+import ColumnOptionsMenu from '@/components/notes/edit/todo/ColumnOptionsMenu.vue';
 
 export default defineComponent({
   name: 'TodoTemplateRow',
   components: {
+    Icon,
     TodoColumn,
-    DraggableList,
     IconBtn,
+    ColumnOptionsMenu,
   },
   props: {
     // columns: {
@@ -54,8 +59,16 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .TodoTemplateRow {
     @apply flex flex-1 border-b border-gray-200;
+  }
+
+  .ColumnOptionsMenu:last-child .TodoColumn {
+    @apply border-none !important;
+  }
+
+  .ColumnOptionsMenu:not(:last-child) .TodoColumn {
+    @apply border-r border-gray-200;
   }
 </style>

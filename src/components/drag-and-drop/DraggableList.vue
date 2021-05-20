@@ -29,11 +29,14 @@ export default defineComponent({
   name: 'DraggableList',
   props: {
     items: {
-      type: [Array, Number],
-      required: true,
+      type: Array,
+      default: () => [],
     },
   },
+  emits: ['update:items'],
   setup() {
+    // TODO no deep items dragenter
+
     const DRAGGABLE_ITEM_CLASS = 'DraggableItem';
     const draggableItems = ref([]);
     const currentDraggableItem = ref(null);

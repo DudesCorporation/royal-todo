@@ -1,0 +1,36 @@
+.animated {
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideMenuInDown {
+  from {
+    transform: translateY(-10%);
+    visibility: hidden;
+  }
+
+  to {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.slideMenuInDown {
+  animation-name: slideMenuInDown;
+}
+
+
+@keyframes slideMenuOutUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translateY(-10%);
+  }
+}
+
+.slideMenuOutUp {
+  animation-name: slideMenuOutUp;
+}
