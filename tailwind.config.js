@@ -22,7 +22,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['active'],
+      backgroundColor: ['active', 'odd', 'even'],
       flexGrow: ['hover'],
       outline: ['hover'],
       maxHeight: ['hover'],

@@ -1,7 +1,9 @@
 <template>
   <div class="EditNote h-full max-h-full flex flex-col">
     <EditNoteHeader />
-    <NoteEditCard />
+    <div class="overflow-y-auto flex-1 px-3 py-4">
+      <NoteEditCard />
+    </div>
     <EditNoteFooter />
   </div>
 </template>

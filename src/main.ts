@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-import Icon from '@/components/Icon.vue';
+import Icon from '@/components/root/Icon.vue';
 import auth from '@/plugins/auth';
 import middleware from '@/middleware';
 import App from './App.vue';

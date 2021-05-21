@@ -1,5 +1,5 @@
 <template>
-  <aside class="flex flex-col border-l border-black">
+  <aside class="FastBuffer flex flex-col border-l border-black">
     <BufferEditor />
     <BufferHistory />
   </aside>
