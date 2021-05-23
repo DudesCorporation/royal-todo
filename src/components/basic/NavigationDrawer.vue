@@ -1,5 +1,5 @@
 <template>
-  <nav class="NavigationDrawer flex flex-col pt-1 border-r border-gray-400">
+  <nav class="NavigationDrawer flex flex-col border-r border-gray-400">
     <router-link
       v-for="(item, index) in items"
       :key="index"
@@ -16,9 +16,7 @@
       </div>
     </router-link>
 
-    <div class="flex-1"></div>
-
-    <div class="p-2">
+    <div class="p-2 mt-auto">
       <div class="nav-btn flex items-center">
         <div class="rounded-full w-10 h-10 bg-gray-500"></div>
         <div class="font-bold ml-4">John Doe</div>
