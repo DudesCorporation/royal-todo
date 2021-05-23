@@ -11,7 +11,7 @@
       class="px-4 py-2 text-white bg-blue-500 border-2 border-blue-600
         rounded-md focus:outline-none active:bg-blue-600"
     >
-      Create new
+      Create note
     </button>
   </header>
 </template>
@@ -27,6 +27,5 @@ export default defineComponent({
 <style lang="scss">
 .BasicHeader {
   height: $toolbar-height;
-  width: calc(100% - 20rem);
 }
 </style>

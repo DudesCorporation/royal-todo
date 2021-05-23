@@ -1,5 +1,5 @@
 <template>
-  <nav class="NavigationDrawer flex flex-col border-r border-gray-400">
+  <nav class="NavigationDrawer">
     <router-link
       v-for="(item, index) in items"
       :key="index"
@@ -42,7 +42,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
   .NavigationDrawer {
-    height: calc(100vh - #{$toolbar-height});
+    @apply flex flex-col border-r border-gray-400 h-screen;
   }
 
   .nav-btn {
