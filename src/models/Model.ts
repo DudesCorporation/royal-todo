@@ -9,14 +9,18 @@ export abstract class Model {
     Object.assign(this, props);
   }
 
-  // check if Model is stored in browser
+  /**
+  * Check if Model is stored in browser
+  */
   stored?() {
-    return false;
+    return !this.id?.startsWith(TEMPORARY_MARK);
   }
 
-  // check if Model is stored in remote DB
+  /**
+   * Check if Model is stored in remote DB
+   */
   exists?() {
-    return !this.id?.startsWith(TEMPORARY_MARK);
+    return false;
   }
 
   store?() {

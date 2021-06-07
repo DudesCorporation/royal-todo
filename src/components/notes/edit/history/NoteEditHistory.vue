@@ -1,10 +1,14 @@
 <template>
   <section class="NoteEditHistory">
-    <div class="flex-1 px-1 overflow-y-auto">
-      <div class="mx-2 my-1 text-lg font-bold">Note history</div>
-      <NoteHistoryItem
-        v-for="item in 105"
-        :key="item"
+    <div class="px-2 py-1 border-b border-gray-400">
+      <span class="text-lg font-bold">Note history</span>
+    </div>
+
+    <div class="flex flex-col flex-1 px-2 py-4 gap-y-3 overflow-y-auto">
+      <NoteHistoryItemsGroup
+        v-for="(group, index) in itemsGroups"
+        :key="index"
+        :group="group"
       />
     </div>
 
@@ -13,15 +17,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import NoteHistoryItem from '@/components/notes/edit/history/NoteHistoryItem.vue';
+import { defineComponent, reactive } from 'vue';
+import NoteHistoryItemsGroup from '@/components/notes/edit/history/NoteHistoryItemsGroup.vue';
 import NoteHistoryActions from '@/components/notes/edit/history/NoteHistoryActions.vue';
+import { HistoryItems } from '@/collections/HistoryItems';
+import { applyHistoryGroupsTitles, HistoryItemsGroup } from '@/helpers/history-items/items-groups';
+import { tempNoteHistoryItems as noteHistoryItems } from '@/helpers/temp/fake-note-history';
 
 export default defineComponent({
   name: 'NoteEditHistory',
   components: {
-    NoteHistoryItem,
+    NoteHistoryItemsGroup,
     NoteHistoryActions,
+  },
+  setup() {
+    const collectedItemsGroups = new HistoryItems(noteHistoryItems).groupBySessionId().toArray();
+    const itemsGroups = reactive(collectedItemsGroups) as HistoryItemsGroup[];
+
+    applyHistoryGroupsTitles(itemsGroups);
+
+    return {
+      itemsGroups,
+    };
   },
 });
 </script>
