@@ -2,8 +2,9 @@
   <component
     :is="to ? 'router-link' : 'button'"
     tag="button"
-    class="flex justify-center items-center rounded-full hover:bg-gray-200 cursor-pointer
+    class="flex justify-center items-center hover:bg-gray-200 cursor-pointer
        transition-all duration-200 active:bg-gray-300 ease-linear focus:outline-none outline-none"
+    :class="{ 'rounded-full': !tile }"
     :to="to"
   >
     <slot>
@@ -25,6 +26,10 @@ export default defineComponent({
     icon: {
       type: String,
       default: '',
+    },
+    tile: {
+      type: Boolean,
+      default: false,
     },
   },
 });

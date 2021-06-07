@@ -14,16 +14,38 @@ export abstract class Collection<T = Model> extends C<T> {
   items: T[];
 
   // @ts-ignore
-  fetchPath = TEMP_URL + '/todos'; // TODO temporary, make abstract and universal
+  protected fetchPath = TEMP_URL + '/todos'; // TODO temporary, make abstract and universal
 
   protected $http = axios;
 
-  public one(id: string, props?: FetchProps | T | object): Promise<T> {
+  constructor(collection?: T[] | object) {
+    super(collection);
+
+    this.#redefineProtectedProperties();
+  }
+
+  // @ts-ignore
+  #redefineProtectedProperties() {
+    Object.defineProperties(this, {
+      fetchPath: {
+        writable: false,
+        configurable: false,
+        enumerable: false,
+      },
+      $http: {
+        writable: false,
+        configurable: false,
+        enumerable: false,
+      },
+    });
+  }
+
+  public one(id: string, props?: FetchProps | T | object): Promise<T | FetchProps | object> {
     const url = this.prepareUrl(`${this.fetchPath}/${id}`, props);
     return this.$http.get(url);
   }
 
-  public async many(props?: FetchProps | T | object): Promise<T[]> {
+  public async many(props?: FetchProps | T | object): Promise<Array<T | FetchProps | object>> {
     const url = this.prepareUrl(this.fetchPath, props);
     this.items = await this.$http.get(url).then(r => r.data);
     return this.items;
