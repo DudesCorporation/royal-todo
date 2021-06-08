@@ -8,12 +8,14 @@
         title="Add column"
         icon="plus"
         class="w-10 h-10 text-xl"
+        @click="$emit('column-add')"
       />
     </TodoColumn>
 
     <ColumnOptionsMenu
       v-for="(column, index) in columns"
       :key="index"
+      @delete-column="$emit('column-delete', column, index)"
     >
       <template #activator="{ on, active }">
         <TodoColumn
@@ -46,26 +48,18 @@ export default defineComponent({
     ColumnOptionsMenu,
   },
   props: {
-    // columns: {
-    //   type: Array,
-    //   required: true,
-    // },
+    columns: {
+      type: Array,
+      required: true,
+    },
   },
-  setup() {
-    return {
-      columns: ['Title', 'Title', 'Title'],
-    };
-  },
+  emits: ['column-add', 'column-delete'],
 });
 </script>
 
 <style scoped>
   .TodoTemplateRow {
     @apply flex flex-1 border-b border-gray-200;
-  }
-
-  .ColumnOptionsMenu:last-child .TodoColumn {
-    @apply border-none !important;
   }
 
   .ColumnOptionsMenu:not(:last-child) .TodoColumn {

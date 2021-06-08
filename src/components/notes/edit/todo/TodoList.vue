@@ -1,6 +1,10 @@
 <template>
   <div class="TodoList">
-    <TodoTemplateRow :columns="tempColumns" />
+    <TodoTemplateRow
+      :columns="tempColumns"
+      @column-add="addNewColumn"
+      @column-delete="deleteOneColumn"
+    />
 
     <OneTodo
       v-for="(todo, index) in todoList"
@@ -26,13 +30,22 @@ export default defineComponent({
     const todos = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=20').then(r => r.json());
     const todoList: unknown[] = reactive(todos);
 
-    const tempColumns = reactive([
-      {},
-    ]);
+    const tempColumns = reactive(['Title', 'Title', 'Title']);
+
+    const addNewColumn = () => {
+      tempColumns.push('Hello world');
+    };
+
+    const deleteOneColumn = (item, index) => {
+      console.log('Column:', item, 'index:', index);
+      tempColumns.splice(index, 1);
+    };
 
     return {
       todoList,
       tempColumns,
+      addNewColumn,
+      deleteOneColumn,
     };
   },
 });

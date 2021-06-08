@@ -10,7 +10,11 @@
       />
     </TodoColumn>
 
-    <TodoColumn class="p-2">
+    <TodoColumn
+      v-for="(column, index) in columns"
+      :key="index"
+      class="p-2"
+    >
       <div>{{ todo }}</div>
       <div>{{ todo }}</div>
     </TodoColumn>

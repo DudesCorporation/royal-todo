@@ -14,10 +14,14 @@ export default defineComponent({
 
 <style lang="scss" scoped>
   .TodoColumn {
-    @apply flex-1;
+    @apply flex-1 border-r;
 
     &:not(:last-child) {
-      @apply border-r border-gray-200;
+      @apply border-gray-200;
+    }
+
+    &:last-child {
+      @apply border-transparent;
     }
   }
 </style>
