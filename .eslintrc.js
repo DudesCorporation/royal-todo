@@ -115,5 +115,10 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'no-param-reassign': 'off',
     'no-return-assign': 'off',
+    '@typescript-eslint/no-use-before-define': ['error', {
+      functions: false,
+      classes: false,
+      variables: true,
+    }],
   },
 };
