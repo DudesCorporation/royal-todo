@@ -39,7 +39,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, SetupContext } from 'vue';
 import BasicMenu from '@/components/menu/BasicMenu.vue';
 import BasicList from '@/components/lists/BasicList.vue';
 import ListItem from '@/components/lists/ListItem.vue';
@@ -52,9 +52,9 @@ export default defineComponent({
     BasicList,
     ListItem,
   },
-  setup() {
+  setup(_, context: SetupContext) {
     return {
-      menuItems: columnOptionsMenuItems,
+      menuItems: columnOptionsMenuItems.call(context),
       OptionsInputType,
     };
   },
