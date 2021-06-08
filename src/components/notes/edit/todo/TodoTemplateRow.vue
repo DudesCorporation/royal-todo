@@ -62,10 +62,6 @@ export default defineComponent({
     @apply flex flex-1 border-b border-gray-200;
   }
 
-  .ColumnOptionsMenu:last-child .TodoColumn {
-    @apply border-none !important;
-  }
-
   .ColumnOptionsMenu:not(:last-child) .TodoColumn {
     @apply border-r border-gray-200;
   }
