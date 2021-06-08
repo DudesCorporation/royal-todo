@@ -1,7 +1,7 @@
 <template>
   <div class="NoteHistoryItem group">
     <div class="flex justify-between mb-0.5">
-      <div class="font-medium">History event</div>
+      <div class="font-medium">{{ item.eventType }}</div>
 
       <div class="flex gap-1">
         <IconBtn
@@ -31,6 +31,12 @@ export default defineComponent({
   name: 'NoteHistoryItem',
   components: {
     IconBtn,
+  },
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
   },
   setup() {
     const date = new Date();

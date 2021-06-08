@@ -15,4 +15,11 @@ export const tempNoteHistoryItems: HistoryItem[] = [
     eventDate: new Date().getTime(),
     sessionId: '123',
   },
+  {
+    eventType: 'Create message',
+    value: '',
+    previousValue: '',
+    eventDate: 1623103016746 + 1800000 + 1800000,
+    sessionId: '123',
+  },
 ];

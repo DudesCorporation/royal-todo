@@ -7,7 +7,8 @@
 
     <NoteHistoryItem
       v-for="item in group.items"
-      :key="item"
+      :key="item.sessionId + item.eventDate"
+      :item="item"
     />
   </div>
 </template>

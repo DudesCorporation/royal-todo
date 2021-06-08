@@ -1,6 +1,8 @@
 import { DateTime } from 'luxon';
 import type { HistoryItem } from '@/models/HistoryItem';
 
+const HALF_AN_HOUR = 1000 * 60 * 30;
+
 export interface HistoryItemsGroup {
   title?: string;
   items: Array<HistoryItem>;
@@ -8,8 +10,12 @@ export interface HistoryItemsGroup {
 
 const historyTitlesLists = {
   notes(group: HistoryItemsGroup, index: number) {
-    // TODO temporary check, add isOpenSession instead
-    if (!index) return 'Recent changes';
+    const lessThanHalfOfHourAgo = (
+      DateTime.fromMillis(group.items[0].eventDate).diffNow().minutes - HALF_AN_HOUR) < 0;
+
+    console.log('lessThanHalfOfHourAgo', lessThanHalfOfHourAgo);
+
+    if (!index && lessThanHalfOfHourAgo) return 'Recent changes';
 
     return formatFromTimestamp(group.items[group.items.length - 1].eventDate);
   },
@@ -20,6 +26,7 @@ function formatFromTimestamp(timestamp: number) {
 }
 
 function getHistoryGroupTitle(group: HistoryItemsGroup, index: number) {
+  // TODO implement universal titles, not only for notes
   return historyTitlesLists.notes(group, index);
 }
 
